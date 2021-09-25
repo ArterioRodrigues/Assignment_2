@@ -20,8 +20,14 @@ Array.prototype.myMap = function(callbackFn) {
 };
 
 // FILTER //
-Array.prototype.myFilter = function() {
-
+Array.prototype.myFilter = function(callbackFn) {
+    let arr = [];
+    for(let i = 0 ; i < this.length; i++)
+    {
+        if(this[i] === undefined) continue;
+        arr.push(callbackFn(this[i], i , this));
+    }
+    return arr;
 };
 
 // SOME //
