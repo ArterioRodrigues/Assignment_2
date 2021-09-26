@@ -13,7 +13,7 @@ Array.prototype.myMap = function(callbackFn) {
 };
  
 let numbers = [1, 2, 3, 4]
-let filteredNumbers = numbers.map(function(num, index) {
+let filteredNumbers = numbers.myMap(function(num, index) {
   if (index < 3) {
      return num
   }
