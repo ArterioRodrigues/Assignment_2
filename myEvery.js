@@ -9,8 +9,8 @@ Array.prototype.myEvery = function(callbackFn) {
     return true;
 };
 
-const isBelowThreshold = (currentValue) => currentValue < 40;
-
-const array1 = [1, 30, 49, 29, 10, 13];
-
-console.log(array1.myEvery(isBelowThreshold));
+function isBigEnough(element, index, array) {
+    return element >= 10;
+  }
+  console.log([12, 5, 8, 130, 44].myEvery(isBigEnough));   // false
+  console.log([12, 54, 18, 130, 44].myEvery(isBigEnough));
