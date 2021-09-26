@@ -126,9 +126,13 @@ Array.prototype.myIndexOf = function(searchElement, fromIndex) {
 };
 
 // PUSH //
-Array.prototype.myPush = function() {
+Array.prototype.myPush = function(...elements) {
+    
+    for(i = 0; i < elements.length; i++)
+        this.push(elements[i]);
 
-};
+    return this.length;
+};  
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function() {
