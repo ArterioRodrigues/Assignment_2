@@ -53,8 +53,30 @@ Array.prototype.myEvery = function(callbackFn) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function() {
+Array.prototype.myReduce = function(callbackFn, inital_value){
+    let x;
 
+    if(inital_value != undefined)
+        x = inital_value;
+
+    for(let i = 0 ; i < this.length; i++)
+    {
+        if(this[i] === undefined) continue;
+
+        if(inital_value === undefined)
+        {
+            if(i === 0)
+            {
+                x = this[i];
+                continue; 
+            }
+            else
+                x = callbackFn(x, this[i], i, this); 
+        }
+        else  
+            x = callbackFn(x, this[i], i, this);
+    }
+    return x;
 };
 
 // INCLUDES //
