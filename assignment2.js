@@ -80,8 +80,26 @@ Array.prototype.myReduce = function(callbackFn, inital_value){
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function() {
+Array.prototype.myIncludes = function(searchElement, fromIndex) {
+    let x = 0;
+    
+    if(fromIndex != undefined)
+    {
+        if(fromIndex > 0)
+            x = fromIndex;
+        else
+            x = this.length + fromIndex;
+    }
 
+    for(let i = x ; i < this.length; i++)
+    {
+        if(this[i] === undefined)  
+            continue;
+        if(this[i] === searchElement)
+            return true;
+        
+    }
+    return false;
 };
 
 // INDEXOF //
