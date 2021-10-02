@@ -127,12 +127,17 @@ Array.prototype.myIndexOf = function(searchElement, fromIndex) {
 
 // PUSH //
 Array.prototype.myPush = function(...elements) {
+    let elements_i = 0;
+    let length = this.length;
     
-    for(i = 0; i < elements.length; i++)
-        this.push(elements[i]);
+    for(i = length; i < length + elements.length; i++){
+        this[i] = elements[elements_i];
+        elements_i++;
+    }
+        
 
     return this.length;
-};  
+};
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
@@ -157,8 +162,16 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
 };
 
 // KEYS //
-Object.grabKeys = function() {
-
+Object.grabKeys = function(object) {
+    let arr = [];
+    let i = 0;
+    for(const property in object)
+    {
+        arr[i] = property;
+        i++;
+    }
+    
+    return arr;
 };
 
 // VALUES //
