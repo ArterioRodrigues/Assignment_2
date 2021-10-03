@@ -25,7 +25,8 @@ Array.prototype.myFilter = function(callbackFn) {
     for(let i = 0 ; i < this.length; i++)
     {
         if(this[i] === undefined) continue;
-        arr.push(callbackFn(this[i], i , this));
+        if(callbackFn(this[i], i , this))
+            arr.push(this[i])
     }
     return arr;
 };
